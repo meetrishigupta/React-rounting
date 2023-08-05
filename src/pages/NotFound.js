@@ -1,16 +1,12 @@
 // import hook here
 
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const NotFound = () => {
-  // create back funtion here
   const Navigate = useNavigate();
-  useEffect(() => {
-    setTimeout(() => {
-      Navigate(-1);
-    }, 1000);
-  }, []);
+  const backtoHome = () => {
+    Navigate("/");
+  };
 
   return (
     <div className="not-found page">
@@ -20,7 +16,7 @@ export const NotFound = () => {
         alt="not found"
       />
 
-      <button>Back to Home</button>
+      <button onClick={backtoHome}>Back to Home</button>
     </div>
   );
 };
